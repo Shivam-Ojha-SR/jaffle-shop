@@ -5,4 +5,4 @@
     status,
     amount / 100 AS amount, --amt stored in cent -> dollar conversion
     created AS created_at
-FROM jaffle_raw.stripe.payment
+FROM {{ source('stripe', 'payment') }}
